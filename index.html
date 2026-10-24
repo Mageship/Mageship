@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAGESHIP | Modern Minimalist Apparel & Custom T-Shirts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-dark antialiased">
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container marquee-container">
+      <div class="marquee-content">
+        <span>✨ COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $75</span>
+        <span class="dot">•</span>
+        <span>MAGESHIP STUDIO: CUSTOM T-SHIRT STUDIO NOW LIVE</span>
+        <span class="dot">•</span>
+        <span>SUMMER CAPSULE '26: DISCOVER THE ALL-WHITE EDIT</span>
+        <span class="dot">•</span>
+        <span>✨ COMPLIMENTARY EXPRESS SHIPPING ON ORDERS OVER $75</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <div class="mobile-toggle" id="mobileMenuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- Navigation Links (Left) -->
+      <nav class="nav-links" id="mainNav">
+        <a href="#home" class="nav-link active" data-target="home">Home</a>
+        <a href="#mens" class="nav-link" data-target="mens">Men</a>
+        <a href="#womens" class="nav-link" data-target="womens">Women</a>
+        <a href="#customizer" class="nav-link highlight" data-target="customizer">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Customize Tee
+        </a>
+        <a href="#contact" class="nav-link" data-target="contact">Contact Us</a>
+      </nav>
+
+      <!-- Brand Logo (Center) -->
+      <div class="brand-logo">
+        <a href="#home" class="logo-link" data-target="home">
+          <span class="logo-text">MAGESHIP</span>
+          <span class="logo-sub">STUDIO ATELIER</span>
+        </a>
+      </div>
+
+      <!-- Header Utilities (Right) -->
+      <div class="header-actions">
+        <button class="action-btn" id="searchTriggerBtn" title="Search catalog">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="action-btn" id="wishlistTriggerBtn" title="Saved items">
+          <i class="fa-regular fa-heart"></i>
+          <span class="action-badge" id="wishlistCount">0</span>
+        </button>
+        <button class="action-btn cart-btn" id="cartTriggerBtn" title="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="action-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <span class="mobile-logo">MAGESHIP</span>
+      <button class="close-drawer" id="closeMobileDrawer">&times;</button>
+    </div>
+    <div class="mobile-nav-list">
+      <a href="#home" class="mobile-nav-item active" data-target="home">Home</a>
+      <a href="#mens" class="mobile-nav-item" data-target="mens">Men's Collection</a>
+      <a href="#womens" class="mobile-nav-item" data-target="womens">Women's Collection</a>
+      <a href="#customizer" class="mobile-nav-item custom-pill" data-target="customizer">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Design Custom T-Shirt
+      </a>
+      <a href="#contact" class="mobile-nav-item" data-target="contact">Contact & Concierge</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <p class="tagline">Minimalist Luxury. Conscious Cotton.</p>
+      <div class="social-links-row">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-backdrop" id="searchBackdrop"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="siteSearchInput" placeholder="Search oversized tees, hoodies, linen shirts..." autocomplete="off">
+        <button class="clear-search-btn" id="clearSearchBtn">&times;</button>
+      </div>
+      <div class="search-results-container" id="searchResultsContainer">
+        <div class="search-quick-tags">
+          <span class="quick-title">Trending Searches:</span>
+          <button class="search-tag" data-query="Tee">Heavyweight Tee</button>
+          <button class="search-tag" data-query="Custom">Customizer</button>
+          <button class="search-tag" data-query="Oversized">Oversized</button>
+          <button class="search-tag" data-query="White">White Essentials</button>
+          <button class="search-tag" data-query="Hoodie">Monochrome Hoodie</button>
+        </div>
+        <div class="results-grid" id="searchResultsGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Dynamic Page Views -->
+  <main class="main-content">
+
+    <!-- ==================== HOME PAGE VIEW ==================== -->
+    <section class="page-view active" id="view-home">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-background-pattern"></div>
+        <div class="hero-container">
+          <div class="hero-text-col">
+            <span class="hero-pill">NEW ATELIER COLLECTION 2026</span>
+            <h1 class="hero-title">Purity of Form.<br><span class="text-stroke">Pure Comfort.</span></h1>
+            <p class="hero-desc">
+              Mageship redefines contemporary everyday wardrobe. Crafted from 280 GSM heavyweight organic combed cotton, featuring modern architectural silhouettes and interactive custom apparel creation.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#customizer" class="btn btn-primary" data-target="customizer">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Customize Your Tee
+              </a>
+              <a href="#mens" class="btn btn-outline" data-target="mens">
+                Explore Best Sellers
+              </a>
+            </div>
+            <div class="hero-badges">
+              <div class="badge-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <strong>100% GOTS Cotton</strong>
+                  <span>Zero micro-plastics</span>
+                </div>
+              </div>
+              <div class="badge-item">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <div>
+                  <strong>30-Day Easy Exchange</strong>
+                  <span>Hassle-free guarantee</span>
+                </div>
+              </div>
+              <div class="badge-item">
+                <i class="fa-solid fa-leaf"></i>
+                <div>
+                  <strong>Ethically Crafted</strong>
+                  <span>Carbon-neutral production</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image-col">
+            <div class="hero-image-card">
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80" alt="Mageship Signature Tee Model" class="hero-main-img">
+              <div class="hero-floating-card top-left">
+                <div class="floating-avatar">
+                  <i class="fa-solid fa-gem"></i>
+                </div>
+                <div>
+                  <div class="tag-title">Mageship Signature</div>
+                  <div class="tag-sub">280 GSM Luxury Weight</div>
+                </div>
+              </div>
+              <div class="hero-floating-card bottom-right">
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="tag-title">4.9/5 from 1,280+ Reviews</div>
+                <div class="tag-sub">"The crispest white tee I've ever owned."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Custom T-Shirt Spotlight Feature Banner -->
+      <section class="custom-spotlight-section">
+        <div class="container">
+          <div class="spotlight-card">
+            <div class="spotlight-badge">
+              <i class="fa-solid fa-palette"></i> CREATIVE ATELIER
+            </div>
+            <div class="spotlight-grid">
+              <div class="spotlight-content">
+                <h2 class="spotlight-title">Design Your Signature Mageship T-Shirt</h2>
+                <p class="spotlight-text">
+                  Take the designer seat. Choose your preferred blank canvas, select custom premium typography, upload bespoke artwork, adjust sizing, and preview in real time on our digital model.
+                </p>
+                <div class="spotlight-features">
+                  <div class="feature-bullet">
+                    <span class="bullet-check"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Ultra-High Density Print & Embroidery</strong>
+                      <p>Fade-resistant digital garment printing tuned for pure white textiles.</p>
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-check"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Pre-Shrunk Organic Heavyweight Fit</strong>
+                      <p>Maintains crisp structured drape wash after wash.</p>
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-check"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                      <strong>Front & Back Dual Customization</strong>
+                      <p>Print on chest, oversized back graphic, or subtle collar monograms.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="spotlight-cta">
+                  <button class="btn btn-primary" data-target="customizer">
+                    Launch Interactive Studio <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                  <span class="price-hint">Starting from <strong>$38.00</strong></span>
+                </div>
+              </div>
+              <div class="spotlight-preview-demo">
+                <div class="interactive-teaser-mockup">
+                  <div class="mockup-header">
+                    <span class="live-indicator"><span class="pulse-dot"></span> LIVE ATELIER PREVIEW</span>
+                    <span class="preset-name">Boxy Fit Blank #01</span>
+                  </div>
+                  <div class="mockup-body">
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=700&q=80" alt="Customizer preview" class="mockup-tee-img">
+                    <div class="floating-custom-element">
+                      <span class="custom-brand-stamp">MAGESHIP / 26</span>
+                    </div>
+                  </div>
+                  <div class="mockup-action-strip">
+                    <button class="btn-micro" data-target="customizer">Try Text Tool</button>
+                    <button class="btn-micro" data-target="customizer">Switch to Back</button>
+                    <button class="btn-micro active" data-target="customizer">Open Full Studio</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Best Selling Products Section -->
+      <section class="products-section section-padding" id="bestSellersSection">
+        <div class="container">
+          <div class="section-header-row">
+            <div>
+              <span class="section-tag">CURATED ESSENTIALS</span>
+              <h2 class="section-title">Best Selling Products</h2>
+              <p class="section-sub">Iconic wardrobe staples crafted in refined white, cloud, and monochrome tones.</p>
+            </div>
+            <div class="filter-pills" id="bestSellerFilters">
+              <button class="pill-btn active" data-filter="all">All Best Sellers</button>
+              <button class="pill-btn" data-filter="tees">T-Shirts</button>
+              <button class="pill-btn" data-filter="hoodies">Hoodies & Knit</button>
+              <button class="pill-btn" data-filter="bottoms">Trousers & Shorts</button>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="products-grid" id="bestSellersGrid">
+            <!-- Populated via app.js -->
+          </div>
+
+          <div class="section-bottom-action">
+            <a href="#mens" class="btn btn-outline" data-target="mens">
+              View All Collections <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Pillars / Why Mageship -->
+      <section class="pillars-section">
+        <div class="container">
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="fa-solid fa-fingerprint"></i></div>
+              <h3 class="pillar-title">Custom Self-Expression</h3>
+              <p class="pillar-desc">Whether minimal typography or bold graphics, our intuitive creator turns your idea into high-grade wearable design.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+              <h3 class="pillar-title">Pure Organic Cotton</h3>
+              <p class="pillar-desc">Sustainably sourced 100% GOTS certified cotton fibers ring-spun for an unmatched soft hand-feel and durability.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+              <h3 class="pillar-title">Architectural Tailoring</h3>
+              <p class="pillar-desc">Dropped shoulders, reinforced ribbed collars, and clean boxy cuts designed to elevate everyday streetwear luxury.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <h3 class="pillar-title">Worldwide White-Glove Shipping</h3>
+              <p class="pillar-desc">Carefully packaged in compostable matte white mailers with express tracking to your doorstep globally.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Marquee / Customer Reviews -->
+      <section class="testimonials-section section-padding">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="section-tag">COMMUNITY VOICES</span>
+            <h2 class="section-title">Loved by Creatives & Minimalists</h2>
+          </div>
+          <div class="testimonials-grid">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">"The customize tool is ridiculously smooth. I uploaded my studio logo on the heavyweight tee, and when it arrived, the print sharpness and cotton thickness blew me away."</p>
+              <div class="review-author">
+                <span class="author-name">Julian Vance</span>
+                <span class="author-role">Art Director, London</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">"Finding a truly opaque, heavy white tee that doesn't go transparent in sunlight is rare. Mageship nailed the 280 GSM weight. It sits impeccably on shoulders."</p>
+              <div class="review-author">
+                <span class="author-name">Elena Rostova</span>
+                <span class="author-role">Architect & Stylist, Berlin</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">"The monochromatic white aesthetic of the entire brand is so satisfying. Customer support answered my bulk customization inquiry within 15 minutes."</p>
+              <div class="review-author">
+                <span class="author-name">Marcus Thorne</span>
+                <span class="author-role">Creative Founder, NYC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ==================== MEN'S CATEGORY VIEW ==================== -->
+    <section class="page-view" id="view-mens">
+      <div class="category-hero">
+        <div class="container">
+          <div class="category-header-wrap">
+            <div class="cat-meta">
+              <span class="cat-label">COLLECTION 2026</span>
+              <h1 class="cat-title">Men's Wardrobe</h1>
+              <p class="cat-desc">Heavyweight dropped-shoulder tees, clean relaxed tailoring, and monochrome fleece engineered for structured elegance.</p>
+            </div>
+            <div class="cat-stats">
+              <div class="cat-stat-box">
+                <span class="stat-number">18</span>
+                <span class="stat-name">Active Styles</span>
+              </div>
+              <div class="cat-stat-box">
+                <span class="stat-number">100%</span>
+                <span class="stat-name">Combed Cotton</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <!-- Sub-filters and Sorting Toolbar -->
+        <div class="catalog-toolbar">
+          <div class="catalog-subcategories" id="mensSubfilters">
+            <button class="cat-pill active" data-sub="all">All Styles</button>
+            <button class="cat-pill" data-sub="tees">T-Shirts</button>
+            <button class="cat-pill" data-sub="hoodies">Hoodies & Sweaters</button>
+            <button class="cat-pill" data-sub="shirts">Linen & Overshirts</button>
+            <button class="cat-pill" data-sub="pants">Pants & Bottoms</button>
+          </div>
+          <div class="catalog-sort">
+            <label for="mensSort">Sort by:</label>
+            <select id="mensSort" class="sort-select">
+              <option value="featured">Featured First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Customer Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Men's Products Grid -->
+        <div class="products-grid catalog-grid" id="mensProductsGrid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WOMEN'S CATEGORY VIEW ==================== -->
+    <section class="page-view" id="view-womens">
+      <div class="category-hero women-hero">
+        <div class="container">
+          <div class="category-header-wrap">
+            <div class="cat-meta">
+              <span class="cat-label">COLLECTION 2026</span>
+              <h1 class="cat-title">Women's Wardrobe</h1>
+              <p class="cat-desc">Sculptural silhouettes, airy organic cottons, boxy tees, and fluid monochrome staples for refined everyday confidence.</p>
+            </div>
+            <div class="cat-stats">
+              <div class="cat-stat-box">
+                <span class="stat-number">16</span>
+                <span class="stat-name">Curated Pieces</span>
+              </div>
+              <div class="cat-stat-box">
+                <span class="stat-number">280 GSM</span>
+                <span class="stat-name">Lux Knit Fabric</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <!-- Sub-filters and Sorting Toolbar -->
+        <div class="catalog-toolbar">
+          <div class="catalog-subcategories" id="womensSubfilters">
+            <button class="cat-pill active" data-sub="all">All Styles</button>
+            <button class="cat-pill" data-sub="tees">Cropped & Boxy Tees</button>
+            <button class="cat-pill" data-sub="knitwear">Sweaters & Knits</button>
+            <button class="cat-pill" data-sub="dresses">Dresses & Sets</button>
+            <button class="cat-pill" data-sub="pants">Tailored Trousers</button>
+          </div>
+          <div class="catalog-sort">
+            <label for="womensSort">Sort by:</label>
+            <select id="womensSort" class="sort-select">
+              <option value="featured">Featured First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Customer Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Women's Products Grid -->
+        <div class="products-grid catalog-grid" id="womensProductsGrid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CUSTOMIZE T-SHIRTS INTERACTIVE STUDIO VIEW ==================== -->
+    <section class="page-view" id="view-customizer">
+      <div class="customizer-page-wrapper">
+        <div class="container">
+          <div class="customizer-header">
+            <div>
+              <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> MAGESHIP ATELIER</span>
+              <h1 class="page-title">Interactive T-Shirt Customizer</h1>
+              <p class="page-sub">Design your one-of-a-kind garment with live visual preview, custom typography, and high-res graphic placement.</p>
+            </div>
+            <div class="customizer-actions-top">
+              <button class="btn btn-outline btn-sm" id="resetCustomizerBtn">
+                <i class="fa-solid fa-rotate-left"></i> Reset Blank
+              </button>
+              <button class="btn btn-outline btn-sm" id="downloadPreviewBtn">
+                <i class="fa-solid fa-download"></i> Save Mockup
+              </button>
+            </div>
+          </div>
+
+          <div class="customizer-layout">
+            <!-- Left Toolset Controls -->
+            <div class="customizer-sidebar">
+              <div class="customizer-panel-card">
+                <!-- Step 1: Base T-Shirt Selection -->
+                <div class="custom-step">
+                  <div class="step-title">
+                    <span class="step-num">1</span>
+                    <h3>Base Garment & Palette</h3>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label class="form-label">Garment Cut</label>
+                    <div class="cut-selector-grid">
+                      <button class="cut-option active" data-cut="oversized">
+                        <span class="cut-name">Heavy Boxy Tee</span>
+                        <span class="cut-weight">280 GSM</span>
+                      </button>
+                      <button class="cut-option" data-cut="regular">
+                        <span class="cut-name">Classic Fit</span>
+                        <span class="cut-weight">220 GSM</span>
+                      </button>
+                      <button class="cut-option" data-cut="cropped">
+                        <span class="cut-name">Cropped Boxy</span>
+                        <span class="cut-weight">240 GSM</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label class="form-label">T-Shirt Hue</label>
+                    <div class="color-swatches-grid">
+                      <button class="swatch-btn active" data-color="#FFFFFF" data-color-name="Pure White" title="Pure White" style="background-color: #FFFFFF; border: 2px solid #000;"></button>
+                      <button class="swatch-btn" data-color="#F5F5F0" data-color-name="Alabaster White" title="Alabaster White" style="background-color: #F5F5F0;"></button>
+                      <button class="swatch-btn" data-color="#ECEBE4" data-color-name="Oatmeal Mist" title="Oatmeal Mist" style="background-color: #ECEBE4;"></button>
+                      <button class="swatch-btn" data-color="#E2E8F0" data-color-name="Ice Glacier" title="Ice Glacier" style="background-color: #E2E8F0;"></button>
+                      <button class="swatch-btn" data-color="#2D3748" data-color-name="Charcoal Ash" title="Charcoal Ash" style="background-color: #2D3748;"></button>
+                      <button class="swatch-btn" data-color="#0F172A" data-color-name="Obsidian Black" title="Obsidian Black" style="background-color: #0F172A;"></button>
+                    </div>
+                    <div class="selected-color-label mt-1 text-xs text-muted" id="selectedColorName">Selected: Pure White (Organic Cotton)</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">T-Shirt View Angle</label>
+                    <div class="view-toggle-group">
+                      <button class="view-toggle-btn active" id="viewFrontBtn">Front View</button>
+                      <button class="view-toggle-btn" id="viewBackBtn">Back View</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 2: Custom Text Studio -->
+                <div class="custom-step">
+                  <div class="step-title">
+                    <span class="step-num">2</span>
+                    <h3>Typography Studio</h3>
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="form-label" for="customTextInput">Custom Wording</label>
+                    <input type="text" id="customTextInput" class="form-control" placeholder="e.g. MAGESHIP ATELIER '26" value="MAGESHIP">
+                  </div>
+                  <div class="form-row mb-2">
+                    <div class="form-col">
+                      <label class="form-label">Font Family</label>
+                      <select id="customFontFamily" class="form-control">
+                        <option value="'Space Grotesk', sans-serif">Space Grotesk (Modern)</option>
+                        <option value="'Plus Jakarta Sans', sans-serif">Jakarta Sans (Clean)</option>
+                        <option value="'Courier New', monospace">Mono Typewriter</option>
+                        <option value="'Georgia', serif">Editorial Serif</option>
+                        <option value="'Impact', sans-serif">Bold Headline</option>
+                      </select>
+                    </div>
+                    <div class="form-col">
+                      <label class="form-label">Font Size (<span id="fontSizeDisplay">24px</span>)</label>
+                      <input type="range" id="customFontSize" min="14" max="48" value="24" class="custom-range">
+                    </div>
+                  </div>
+                  <div class="form-row mb-2">
+                    <div class="form-col">
+                      <label class="form-label">Text Color</label>
+                      <div class="text-color-swatches">
+                        <button class="text-color-btn active" data-color="#111827" style="background-color: #111827;" title="Pitch Black"></button>
+                        <button class="text-color-btn" data-color="#FFFFFF" style="background-color: #FFFFFF; border: 1px solid #ccc;" title="Pure White"></button>
+                        <button class="text-color-btn" data-color="#DC2626" style="background-color: #DC2626;" title="Crimson Red"></button>
+                        <button class="text-color-btn" data-color="#2563EB" style="background-color: #2563EB;" title="Cobalt Blue"></button>
+                        <button class="text-color-btn" data-color="#059669" style="background-color: #059669;" title="Emerald Green"></button>
+                        <button class="text-color-btn" data-color="#D97706" style="background-color: #D97706;" title="Amber Gold"></button>
+                      </div>
+                    </div>
+                    <div class="form-col">
+                      <label class="form-label">Print Position</label>
+                      <select id="textPositionSelect" class="form-control">
+                        <option value="center">Center Chest</option>
+                        <option value="pocket">Left Chest Pocket</option>
+                        <option value="oversized">Oversized Lower</option>
+                        <option value="collar">Minimalist Collar</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 3: Badges, Artwork & Logo Upload -->
+                <div class="custom-step">
+                  <div class="step-title">
+                    <span class="step-num">3</span>
+                    <h3>Artwork & Emblems</h3>
+                  </div>
+                  <label class="form-label">Choose Preset Studio Artwork</label>
+                  <div class="preset-badges-grid">
+                    <button class="preset-badge-btn active" data-badge="none">None</button>
+                    <button class="preset-badge-btn" data-badge="geo-minimal">◈ Geometry</button>
+                    <button class="preset-badge-btn" data-badge="circle-sig">◎ M-Emblem</button>
+                    <button class="preset-badge-btn" data-badge="barcode">❚❘❙ ARCHIVE</button>
+                    <button class="preset-badge-btn" data-badge="flower">✿ Botanical</button>
+                    <button class="preset-badge-btn" data-badge="star">✦ North Star</button>
+                  </div>
+
+                  <div class="upload-dropzone mt-3" id="dropzoneUpload">
+                    <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
+                    <p class="dropzone-text"><strong>Upload your own design or logo</strong></p>
+                    <span class="dropzone-hint">PNG, JPG, SVG transparent recommended (Max 5MB)</span>
+                    <input type="file" id="userLogoFileInput" accept="image/*" class="file-hidden-input">
+                    <button class="btn btn-outline btn-xs mt-2" onclick="document.getElementById('userLogoFileInput').click()">
+                      Browse File
+                    </button>
+                  </div>
+                  <div class="uploaded-logo-preview-strip hidden" id="uploadedLogoStrip">
+                    <span class="logo-name-display" id="uploadedFileName">Custom_Design.png</span>
+                    <button class="btn-remove-logo" id="removeUploadedLogoBtn">&times; Remove</button>
+                  </div>
+                </div>
+
+                <!-- Step 4: Sizing & Add to Bag -->
+                <div class="custom-step">
+                  <div class="step-title">
+                    <span class="step-num">4</span>
+                    <h3>Size & Checkout</h3>
+                  </div>
+                  <div class="size-picker-row">
+                    <button class="size-pill" data-size="XS">XS</button>
+                    <button class="size-pill" data-size="S">S</button>
+                    <button class="size-pill active" data-size="M">M</button>
+                    <button class="size-pill" data-size="L">L</button>
+                    <button class="size-pill" data-size="XL">XL</button>
+                    <button class="size-pill" data-size="2XL">2XL</button>
+                  </div>
+
+                  <div class="custom-pricing-summary">
+                    <div class="price-row">
+                      <span>Heavy Boxy Blank Tee:</span>
+                      <span>$38.00</span>
+                    </div>
+                    <div class="price-row" id="customPrintAddonRow">
+                      <span>High-Density Atelier Print:</span>
+                      <span id="customPrintCost">+$8.00</span>
+                    </div>
+                    <div class="price-row total-row">
+                      <strong>Total Custom Price:</strong>
+                      <strong class="total-price-val" id="totalCustomPrice">$46.00</strong>
+                    </div>
+                  </div>
+
+                  <button class="btn btn-primary btn-block btn-lg" id="addCustomTeeToCartBtn">
+                    <i class="fa-solid fa-bag-shopping"></i> Add Custom Garment to Bag
+                  </button>
+                  <div class="satisfaction-note">
+                    <i class="fa-solid fa-circle-check text-success"></i> Each custom piece inspected by Mageship studio master craftspeople before shipping.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Interactive Canvas / Live Mockup Studio -->
+            <div class="customizer-preview-stage">
+              <div class="stage-container">
+                <div class="stage-floating-badges">
+                  <span class="stage-badge"><i class="fa-solid fa-rotate"></i> 360° Visual Mode</span>
+                  <span class="stage-badge" id="currentViewBadge">Viewing: Front</span>
+                </div>
+
+                <!-- The Interactive T-Shirt Preview Canvas Box -->
+                <div class="tshirt-canvas-wrapper" id="tshirtCanvasWrapper">
+                  <!-- Vector / Mockup Layer -->
+                  <div class="tshirt-base-silhouette" id="tshirtSilhouette">
+                    <!-- SVG T-Shirt Illustration with exact shading and contour -->
+                    <svg class="tshirt-svg" viewBox="0 0 600 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Base Fabric Fill Layer -->
+                      <path id="svgFabricBody" d="M190 40 C 230 70, 370 70, 410 40 L 530 110 L 485 240 L 430 205 L 430 640 L 170 640 L 170 205 L 115 240 L 70 110 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="3" stroke-linejoin="round"/>
+                      
+                      <!-- Sleeve and Collar Shading & Seams -->
+                      <path d="M190 40 C 250 85, 350 85, 410 40 C 375 75, 225 75, 190 40 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                      <path d="M115 240 L 170 205" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3 3"/>
+                      <path d="M485 240 L 430 205" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3 3"/>
+                      <path d="M170 205 L 170 640" stroke="#E2E8F0" stroke-width="2"/>
+                      <path d="M430 205 L 430 640" stroke="#E2E8F0" stroke-width="2"/>
+                      <path d="M170 615 L 430 615" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4 4"/>
+                    </svg>
+
+                    <!-- Printable Canvas Overlay Area -->
+                    <div class="printable-area-box" id="printableAreaBox">
+                      <div class="printable-boundary-guideline">
+                        <span>Print Area</span>
+                      </div>
+
+                      <!-- Preset Badge Graphic Container -->
+                      <div class="print-graphic-container hidden" id="printGraphicContainer">
+                        <div class="preset-graphic-svg" id="presetGraphicSvg"></div>
+                      </div>
+
+                      <!-- Uploaded User Graphic Image -->
+                      <div class="print-user-image-container hidden" id="printUserImageContainer">
+                        <img id="printUserImage" src="" alt="User custom upload">
+                      </div>
+
+                      <!-- Custom Text Overlay -->
+                      <div class="print-text-container" id="printTextContainer">
+                        <span id="printLiveText">MAGESHIP</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stage-controls-bar">
+                  <div class="control-tip">
+                    <i class="fa-solid fa-arrows-up-down-left-right"></i> Drag items or use position selector to adjust placement.
+                  </div>
+                  <div class="zoom-toggles">
+                    <button class="zoom-btn" id="zoomOutBtn" title="Zoom Out"><i class="fa-solid fa-minus"></i></button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                    <button class="zoom-btn" id="zoomInBtn" title="Zoom In"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT US VIEW ==================== -->
+    <section class="page-view" id="view-contact">
+      <div class="contact-page-wrapper section-padding">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left Info Column -->
+            <div class="contact-info-col">
+              <span class="section-tag">CONNECT & CONCIERGE</span>
+              <h1 class="page-title">We’re Here for Every Thread</h1>
+              <p class="contact-intro">
+                Have inquiries regarding bespoke bulk custom t-shirt orders, sizing consultations, or wholesale partnerships? Reach out to our direct atelier desk.
+              </p>
+
+              <div class="info-blocks-list">
+                <div class="info-block">
+                  <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                  <div class="info-content">
+                    <h4>Atelier & Showroom</h4>
+                    <p>448 Mercer Street, Soho<br>New York, NY 10013, USA</p>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="info-content">
+                    <h4>Electronic Concierge</h4>
+                    <p><a href="mailto:concierge@mageship.com" class="link-styled">concierge@mageship.com</a></p>
+                    <p><a href="mailto:custom@mageship.com" class="link-styled">custom@mageship.com</a> (Custom Orders)</p>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div class="info-content">
+                    <h4>Direct Line</h4>
+                    <p>+1 (800) 492-MAGE<br>Mon – Fri, 9:00 AM – 6:00 PM EST</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Quick Accordion -->
+              <div class="faq-accordion-box mt-5">
+                <h3 class="faq-box-title">Frequently Asked Questions</h3>
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>What is the turnaround time for custom T-shirts?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Standard custom garments are individually printed and cured within 2-3 business days, followed by complimentary 2-day express priority shipping.</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Do you accept bulk orders for fashion brands or teams?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Yes. For orders over 25 units, we offer volume pricing tiers, custom woven neck labels, and individual poly-bagging. Select "Custom Bulk Order" on the form.</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>How should I wash my Mageship 280 GSM cotton tees?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Wash inside-out in cold water with mild eco-detergent. Hang dry or tumble dry low. Do not iron directly on printed graphics.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Form Column -->
+            <div class="contact-form-col">
+              <div class="form-card">
+                <h2 class="form-card-title">Send a Direct Dispatch</h2>
+                <p class="form-card-sub">Our concierge responds within 4 working hours.</p>
+
+                <form id="contactForm" class="site-form" novalidate>
+                  <div class="form-row">
+                    <div class="form-group form-col">
+                      <label for="contactName" class="form-label">Full Name <span class="required">*</span></label>
+                      <input type="text" id="contactName" class="form-control" placeholder="e.g. Christian Dior" required>
+                      <div class="field-error" id="nameError">Please enter your name.</div>
+                    </div>
+                    <div class="form-group form-col">
+                      <label for="contactEmail" class="form-label">Email Address <span class="required">*</span></label>
+                      <input type="email" id="contactEmail" class="form-control" placeholder="name@domain.com" required>
+                      <div class="field-error" id="emailError">Please enter a valid email address.</div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group form-col">
+                      <label for="contactSubject" class="form-label">Inquiry Nature</label>
+                      <select id="contactSubject" class="form-control">
+                        <option value="custom">Custom T-Shirt Order / Atelier Service</option>
+                        <option value="order">Online Order Status & Tracking</option>
+                        <option value="sizing">Sizing & Fabric Guidance</option>
+                        <option value="wholesale">B2B Wholesale / Studio Collaboration</option>
+                        <option value="press">Press & Editorial</option>
+                      </select>
+                    </div>
+                    <div class="form-group form-col">
+                      <label for="contactOrderNum" class="form-label">Order Reference (Optional)</label>
+                      <input type="text" id="contactOrderNum" class="form-control" placeholder="#MG-9804">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contactMessage" class="form-label">Your Message <span class="required">*</span></label>
+                    <textarea id="contactMessage" class="form-control" rows="5" placeholder="Tell us about your project, questions, or custom requirements..." required></textarea>
+                    <div class="field-error" id="messageError">Please type your message (minimum 10 characters).</div>
+                  </div>
+
+                  <div class="form-group checkbox-group">
+                    <label class="custom-checkbox-label">
+                      <input type="checkbox" id="newsletterConsent" checked>
+                      <span class="checkmark"></span>
+                      <span>Subscribe to Mageship Atelier quarterly private drops & archival releases.</span>
+                    </label>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitContactBtn">
+                    <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </form>
+
+                <div class="form-success-banner hidden" id="formSuccessBanner">
+                  <div class="success-icon-wrap">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </div>
+                  <h3>Message Successfully Dispatched</h3>
+                  <p>Thank you for reaching out to Mageship. A concierge specialist has received your dispatch and will reply to your inbox within 4 hours.</p>
+                  <button class="btn btn-outline btn-sm mt-3" id="resetContactFormBtn">Send Another Inquiry</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Quick View Product Modal -->
+  <div class="quickview-modal" id="quickViewModal">
+    <div class="quickview-backdrop" id="quickViewBackdrop"></div>
+    <div class="quickview-dialog">
+      <button class="quickview-close" id="closeQuickView">&times;</button>
+      <div class="quickview-content" id="quickViewContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Slide-out Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Your Shopping Bag</span>
+        <span class="cart-items-count-badge" id="cartDrawerCount">0 items</span>
+      </div>
+      <button class="close-drawer" id="closeCartDrawer">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="free-shipping-bar-box">
+      <div class="shipping-msg" id="shippingMsg">Add $75.00 more for Free Worldwide Shipping</div>
+      <div class="shipping-progress-track">
+        <div class="shipping-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary-line">
+        <span>Estimated Subtotal</span>
+        <strong id="cartSubtotalAmount">$0.00</strong>
+      </div>
+      <div class="cart-summary-line text-sm text-muted">
+        <span>Shipping & Carbon Offset</span>
+        <span id="shippingFeeText">Calculated at checkout</span>
+      </div>
+      <div class="promo-code-wrap">
+        <input type="text" id="promoInput" placeholder="Promo code (Try 'WHITE15')" class="promo-input">
+        <button class="btn-apply-promo" id="applyPromoBtn">Apply</button>
+      </div>
+      <div class="promo-feedback hidden" id="promoFeedback"></div>
+      <button class="btn btn-primary btn-block btn-lg mt-3" id="proceedCheckoutBtn">
+        Proceed to Secure Checkout <i class="fa-solid fa-lock ml-1"></i>
+      </button>
+      <p class="secure-tagline"><i class="fa-solid fa-shield-check"></i> 256-Bit SSL Encrypted & Satisfaction Guaranteed</p>
+    </div>
+  </div>
+
+  <!-- Wishlist Slide-out Drawer -->
+  <div class="cart-drawer wishlist-drawer" id="wishlistDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="fa-regular fa-heart"></i>
+        <span>Saved Wishlist</span>
+      </div>
+      <button class="close-drawer" id="closeWishlistDrawer">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="wishlistDrawerBody">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- Toast Notification Hub -->
+  <div class="toast-hub" id="toastHub"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <span class="footer-logo">MAGESHIP</span>
+          <p class="footer-bio">
+            Contemporary minimalist clothing atelier centered on pure whites, architectural cuts, heavyweight organic cottons, and custom t-shirt craftsmanship.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#mens" data-target="mens">Men's Wardrobe</a></li>
+            <li><a href="#womens" data-target="womens">Women's Wardrobe</a></li>
+            <li><a href="#customizer" data-target="customizer">Interactive T-Shirt Studio</a></li>
+            <li><a href="#home" data-target="home">Best Sellers</a></li>
+            <li><a href="#mens" data-target="mens">Heavyweight 280 GSM Tees</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Atelier Concierge</h4>
+          <ul class="footer-links">
+            <li><a href="#contact" data-target="contact">Contact Desk</a></li>
+            <li><a href="#contact" data-target="contact">Custom Bulk Inquiries</a></li>
+            <li><a href="#contact" data-target="contact">Garment Care Guide</a></li>
+            <li><a href="#contact" data-target="contact">Sustainability & Traceability</a></li>
+            <li><a href="#contact" data-target="contact">Returns & Size Exchanges</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h4 class="footer-heading">The White Archive</h4>
+          <p class="newsletter-sub">Receive invitations to private studio drops, custom fabric releases, and archival pieces.</p>
+          <form class="footer-newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); window.appToast('Subscribed to Mageship Archive!');">
+            <input type="email" placeholder="Your email address" required class="footer-input">
+            <button type="submit" class="btn btn-primary btn-newsletter">Join</button>
+          </form>
+          <span class="privacy-note">Zero spam. Unsubscribe at any time with one click.</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 MAGESHIP ATELIER INC. All rights reserved. Designed with purity in white.</p>
+        <div class="payment-badges">
+          <span><i class="fa-brands fa-cc-apple-pay"></i> Apple Pay</span>
+          <span><i class="fa-brands fa-cc-visa"></i> Visa</span>
+          <span><i class="fa-brands fa-cc-mastercard"></i> MasterCard</span>
+          <span><i class="fa-brands fa-google-pay"></i> G-Pay</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
